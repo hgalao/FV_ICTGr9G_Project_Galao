@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Q4 Project</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <style>
+        body, html {
+            background-image: url("bgbbgbgb.png");
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <img src="louguuu-removebg-preview.png" width="370px" class="rounded mx-auto d-block"><br>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <img src="image-removebg-preview (7).png" width="200px" class="rounded mx-auto d-block">
+                <input type="number" class="form-control" id="millimeters" placeholder="Millimeter">
+            </div>
+            <div class="col-sm-6">
+                <img src="amaz.png" width="150px" class="rounded mx-auto d-block">
+                <select class="form-control" id="unit">
+                    <option value="centimeters">Centimeters</option>
+                    <option value="meters">Meters</option>
+                    <option value="kilometers">Kilometers</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <br>
+                <input type="button" class="btn btn-outline-light" onclick="convertLength()" value="Submit">
+                <br><br>
+                <img src="results.png" width="100px" class="rounded mx-auto d-block">
+                <input class="form-control" type="text" id="result" aria-label="Disabled input example" disabled>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function convertLength() {
+            var millimeters = parseFloat(document.getElementById("millimeters").value);
+            var unit = document.getElementById("unit").value;
+            var result;
+
+            if (unit === "centimeters") {
+                result = (millimeters / 10).toFixed(10);
+            } else if (unit === "meters") {
+                result = (millimeters / 1000).toFixed(10);
+            } else if (unit === "kilometers") {
+                result = (millimeters / 1000000).toFixed(10);
+            } else {
+                result = 0;
+            }
+
+            document.getElementById("result").value = result;
+        }
+    </script>
+</body>
+</html>
